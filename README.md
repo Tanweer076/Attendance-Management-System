@@ -1,49 +1,58 @@
-# Employee Attendance Management System (Face Recognition)
+# Employee Anomaly Attendance Detection
 
 ## Project Type
+
+Group Project (3 Members)
 
 ---
 
 ## Problem Statement
 
-Many organizations and institutions still use manual attendance systems, which are time-consuming and prone to errors such as proxy attendance and incorrect records.
-This project aims to develop an automated attendance system using **Machine Learning and Face Recognition** to accurately mark attendance and store it digitally. The system detects and recognizes faces through a webcam and automatically records attendance with date and time.
+Employee attendance data often contains hidden anomalies such as irregular check-in times, unusual working hours, or unexpected absences. Detecting these anomalies manually is difficult and time-consuming.
+
+This project detects such anomalies using **Machine Learning anomaly detection algorithms** to help HR identify unusual attendance behavior patterns and improve workforce management.
 
 ---
 
 ## My Contribution
 
-* Collected and preprocessed student face image dataset
-* Implemented face detection using OpenCV
-* Implemented face recognition using LBPH algorithm
-* Developed Python GUI for system interface
-* Integrated database for attendance storage
-* Testing, debugging, and documentation
+* Data preprocessing and feature engineering
+* Applied anomaly detection algorithms on attendance data
+* Implemented Isolation Forest, Local Outlier Factor, and One-Class SVM models
+* Model evaluation and comparison
+* Data visualization using Matplotlib
+* Documentation and report preparation
 
 ---
 
 ## Algorithms Used
 
-* Haar Cascade Classifier (Face Detection)
-* LBPH – Local Binary Pattern Histogram (Face Recognition)
-* Image Processing using OpenCV
+Three anomaly detection algorithms were applied to the attendance dataset:
+
+* **Local Outlier Factor (LOF)** – Detects anomalies based on local density differences
+* **One-Class SVM** – Identifies anomalies by learning normal attendance behavior
+* **Isolation Forest** – Detects anomalies using random data partitioning
+
+**Results:**
+
+* LOF → Detected **63 anomalies** and **1193 normal records**
+* One-Class SVM → Detected **62 anomalies** and **1194 normal records**
+* Isolation Forest → Detected **63 anomalies** and **1193 normal records**
 
 ---
 
 ## Project Structure
 
 ```
-Attendance-Management-System/
+Employee-Anomaly-Attendance-Detection/
 │
-├── dataset/                         # Student images
-├── trainer/                         # Trained model
-├── attendance/                      # Attendance records
-├── haarcascade_frontalface_default.xml
-├── train.py                         # Train model
-├── recognize.py                     # Recognize face & mark attendance
-├── student.py                       # Add student details
-├── attendance.py                    # Attendance management
-├── main.py                          # Main GUI
+├── dataset/                # Attendance dataset
+├── preprocessing.py        # Data preprocessing
+├── lof_model.py            # Local Outlier Factor
+├── ocsvm_model.py          # One-Class SVM
+├── isolation_forest.py     # Isolation Forest
+├── visualization.py        # Graphs and plots
+├── main.py                 # Main file
 └── README.md
 ```
 
@@ -52,12 +61,12 @@ Attendance-Management-System/
 ## Tech Stack
 
 * Python
-* OpenCV
-* NumPy
 * Pandas
+* NumPy
 * Scikit-learn
-* Tkinter (GUI)
-* SQLite (Database)
+* Matplotlib
+* Seaborn
+* Jupyter Notebook
 
 ---
 
@@ -66,7 +75,7 @@ Attendance-Management-System/
 1. Install dependencies
 
 ```
-pip install opencv-python numpy pandas scikit-learn pillow
+pip install pandas numpy scikit-learn matplotlib seaborn
 ```
 
 2. Run the project
@@ -75,37 +84,35 @@ pip install opencv-python numpy pandas scikit-learn pillow
 python main.py
 ```
 
-3. First add student images → Train model → Run face recognition → Attendance will be marked automatically.
-
 ---
 
 ## Output
 
-* The system captures face through webcam
-* Recognizes the student
-* Marks attendance with date and time
-* Stores attendance in database/CSV file
+The system classifies attendance records into:
+
+* Normal Attendance
+* Anomalous Attendance
+
+This helps HR to identify:
+
+* Late arrivals
+* Early departures
+* Unusual work durations
+* Frequent absences
 
 ---
 
 ## Future Improvements
 
-* Mask face recognition
-* Mobile app integration
-* Cloud database
-* Email notification for attendance
-* Admin login system
+* Real-time anomaly detection
+* Web dashboard for HR
+* Email alert for anomalies
+* Integration with biometric system
 
 ---
 
-If your teacher asks **“Why LBPH?”** in viva, answer:
+## Conclusion
 
-> LBPH is used because it is fast, works well on small datasets, and is suitable for real-time face recognition systems.
+This project shows how machine learning can be used to detect unusual patterns in employee attendance data using anomaly detection algorithms like LOF, One-Class SVM, and Isolation Forest.
 
 ---
-
-If you want, I can also make:
-
-* requirements.txt
-* Flowchart
-* Viva questions & answers
