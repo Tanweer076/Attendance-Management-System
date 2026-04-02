@@ -1,12 +1,6 @@
-Got it. You want a README **in this same format** but for your **Attendance Management System (ML Face Recognition)** project. Use the template below:
-
----
-
 # Employee Attendance Management System (Face Recognition)
 
 ## Project Type
-
-Group Project (3 Members)
 
 ---
 
